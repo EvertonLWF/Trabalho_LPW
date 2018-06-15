@@ -29,3 +29,5 @@ create table categoria (
 );
 
 teste
+
+outro teste
