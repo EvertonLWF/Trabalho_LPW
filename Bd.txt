@@ -6,6 +6,7 @@ create table posts(
 	descricao varchar(255),
 	data date,
 	id_post int,
+	categoria varchar(255),
 	primary key(id_post),
 	constraind fk_post foreingh key(id_user) references id_user(usuario)
 
