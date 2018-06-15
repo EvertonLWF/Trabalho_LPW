@@ -6,9 +6,10 @@ create table posts(
 	descricao varchar(255),
 	data date,
 	id_post int,
-	categoria varchar(255),
+	id_categoria int not null,
 	primary key(id_post),
-	constraind fk_post foreingh key(id_user) references id_user(usuario)
+	foreigh key(id_user) references id_user(usuario),
+	foreign key(id_post) references categoria(id_categoria)
 
 );
 
@@ -20,9 +21,4 @@ create table usuario(
 	primary key(id_user)
 
 
-);
-
-create table categoria (
-	nm_categoria varchar(255) not null,
-	primary key (id_categoria)
 );
