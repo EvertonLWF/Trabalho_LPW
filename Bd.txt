@@ -27,3 +27,5 @@ create table categoria (
 	nm_categoria varchar(255) not null,
 	primary key (id_categoria)
 );
+
+teste
