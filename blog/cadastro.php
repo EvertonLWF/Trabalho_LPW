@@ -16,12 +16,14 @@ if(!isset($_SESSION['id'])&&empty($_SESSION['id'])){
 	}
 ?>
 		<form action="cadastro.php" method="POST">
-			Digite seu e-mail:
+			Digite seu e-mail:<br>
 			<input type="email" name="email">
-			Digite sua senha:
+			Digite sua senha:<br>
 			<input type="password" name="senha">
-			Digite seu nome:
+			Digite seu nome:<br>
 			<input type="nome" name="nome">
+			Digite sua data de nascimento:<br>
+			<input type="dataNasc" name="dataNasc">
 			<input type="submit" value="Cadastrar">
 		</form>
 	<?php
