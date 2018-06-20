@@ -25,7 +25,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="#" method="post">
+        <form action="cadastro.php" method="post">
         	nome: <input type="text" name="nome"><br>
         	email: <input type="email" name="email"><br>
         	senha: <input type="password" name="senha"><br>
@@ -56,7 +56,7 @@
         </button>
       </div>
       <div class="modal-body">
-       <form action="#" method="post">
+       <form action="login.php" method="post">
        	Email: <input type="email" name="email"><br>
        	Senha: <input type="password" name="senha">
        </form>
