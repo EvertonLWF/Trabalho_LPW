@@ -7,18 +7,9 @@ session_start();
 	$consulta=pg_connect("host=localhost port=5432 dbname=blog user=postgres password=senha5");//banco com postgres
 // 	$consulta=mysqli_connect("host=localhost port=5432 dbname=blog user=root");// banco com mysql
 	if($consulta==true){
-		echo "Conectado ao Banco de dados";
+		echo "teste banco de dados OK<br>";
 	}
 	else{
 		echo "Desconectado ";
 	}
-
-
-
-
-
-
-
-
-
 ?>
