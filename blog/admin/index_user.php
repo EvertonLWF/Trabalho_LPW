@@ -1,4 +1,7 @@
-<?php 
+<?php
+session_start();
+$nome=$_SESSION['nome'];
+echo $nome;
 require_once('../conexao.php');
 $sql="SELECT * FROM usuarios WHERE tipo = 0";
 $resultado = pg_query($consulta,$sql);
@@ -34,7 +37,7 @@ foreach ($r as $key) {
 		<td>'.$key['email'].'</td>
 		<td><a class="btn btn-danger"href="index_user.php?id='.$key['id_user'].'">
 				Bloquear</a>
-		<a class="btn btn-success"href="listaPosts.php?id='.$key['id_user'].'">
+		<a class="btn btn-success"href="listaPosts.php?id_user='.$key['id_user'].'">
 				Posts</a></td></tr>';
 	echo $html;
 }

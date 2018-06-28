@@ -1,6 +1,15 @@
 <?php
-$id= $_GET['id'];
+
 require_once('../conexao.php');
+
+if(isset($_GET['id_user'])){
+	$id= $_GET['id_user'];
+}else{
+	$id= $_SESSION['id_user'];
+}
+
+
+
 $sql="SELECT * FROM posts WHERE id_user='".$id."'";
 $resultado = pg_query($consulta,$sql);
 if(pg_fetch_assoc($resultado)>0){
@@ -29,7 +38,7 @@ if(pg_fetch_assoc($resultado)>0){
 			<td>'.$key['data'].'</td>
 			<td>'.$key['titulo'].'</td>
 			<td>'.$key['descricao'].'</td>
-			<td><a class="btn btn-danger"href="deletar.php?id='.$key['id_post'].'&&'.$key['id_user'].'">
+			<td><a class="btn btn-danger"href="deletar.php?id_post='.$key['id_post'].'&&id_user='.$key['id_user'].'">
 					Excluir</a>';
 		echo $html;
 	}
