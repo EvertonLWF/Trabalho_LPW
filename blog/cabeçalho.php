@@ -38,17 +38,17 @@
               </button>
             </div>
             <div class="modal-body" class="text-center">
-             <form action="login.php" method="post">
-              Email: <input type="email" name="email" class="form-control"><br>
-              Senha: <input type="password" name="senha" class="form-control">
-             </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-primary">Logar</button>
-            </div>
-          </div>
-        </div>
+	<form action="login.php" method="post">
+         	Email: <input type="email" name="email" class="form-control"><br>
+        	Senha: <input type="password" name="senha" class="form-control">
+            	 <div class="modal-footer">
+             	 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+             	 <button type="button" class="btn btn-primary">Logar</button>
+            	</div>
+	</form>    
       </div>
-  </div>
+    </div>
+</div>
+</div>
+</div>
 </nav>
