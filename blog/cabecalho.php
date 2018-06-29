@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <script language="javascript" type="text/javascript">
 <?php
+  session_start();
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
       if($_SESSION['tipo']==1){
         header("Location:admin/index_user.php");
