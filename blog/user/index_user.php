@@ -2,21 +2,28 @@
 require_once('../conexao.php');
 include_once'../function.php';
 if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 0){
+	$nome=$_SESSION['nome'];
+	echo "Seja bem vindo ".$nome;
+
 	$id= $_SESSION['id'];
 	$r=listaPosts($id);
 	if($r!=null){
 
 	?>
-
+	<a class="btn btn-Success" href="criar.php">Criar Post</a>
+	<a class="btn btn-Danger" href="../logout.php">Criar Post</a>
 	<div itemprop="breadcrumb">
 		<a class="hiddenSpellError" href="../logout.php">Inicio</a> »
 		<a class="hiddenSpellError" href="">Usuario</a>
 	</div>
-	<form action="../busca.php" method="post">
-		<label for="busca">Buscar</label>
-		<input align="center" size="100" type="search" id="busca" name="q">
-		<button type="submit">OK</button>
-	</form>
+	<div class="sidebar-search">
+		<form class="sidebar-search-form" action="busca.php" method="Post">
+			<fieldset>
+				<input type="text" size="30" id="busca" name="busca">
+				<input type="submit" class="search-submit" value="Buscar">
+			</fieldset>
+		</form>
+	</div>
 
 	<table class="table">
 		<h3 align="center">Meus Posts </h3>
