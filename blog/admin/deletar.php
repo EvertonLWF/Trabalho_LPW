@@ -1,5 +1,6 @@
 <?php 
 	require_once('../conexao.php');
+	if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 1){
 	$id_post=$_GET['id_post'];
 	$id_user=$_GET['id_user'];
 	$_SESSION['id_user']=$id_user;
@@ -11,5 +12,5 @@
 	}else{
 		echo "erro!!!!!!!!";
 	}
-
+}
 ?>
