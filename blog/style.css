@@ -9,9 +9,18 @@
     padding: 1%;
 }
 
-.cadastro
+.divCriaPost{
+    text-align:left;
+    background-color: white;
+    width: 50%;
+    height: 50%;
+    border: 1px solid white;
+    margin: 50px;
+    padding: 1%;
+}
+
+.fundo
 {
-    /*background-image: url('fundo.jpg');*/
     background-color: #8fc0a9;
     background-repeat: no-repeat;
     background-size:100%;
@@ -19,7 +28,6 @@
     color: black;
     left: 0;
     overflow: auto;
-    padding: 3em;
     position: absolute;
     right: 0;
     text-align: center;
