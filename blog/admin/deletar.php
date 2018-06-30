@@ -8,7 +8,7 @@
 		$sql="DELETE FROM posts WHERE id_post='".$id_post."'";
 		$res=pg_query($consulta,$sql);
 
-		header("location:listaPosts.php");
+		header("location:postsAdmin.php");
 	}else{
 		echo "erro!!!!!!!!";
 	}

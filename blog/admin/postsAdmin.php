@@ -23,6 +23,7 @@
 			header("location:../index.php");
 		}
 		$nome=$_SESSION['nome'];
+
 		$id= $_SESSION['id'];
 		$r=listaPosts($id);
 		if($r!=null){
@@ -38,7 +39,7 @@
 			</a>
 			<div class="alinha" class="text-center">
 				<a class="btn btn-light" href="../logout.php" role="button">Logout</a>
-				<a class="btn btn-light" href="cria.php" role="button">Novo post</a>
+				<a class="btn btn-light" href="criar.php" role="button">Novo post</a>
 			</div>
 		</nav>
 		
@@ -46,7 +47,8 @@
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="../logout.php"> Home</a></li>
-				<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="index_user.php"> Usuario</a></li>
+				<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="index_user.php"> Administrador</a></li>
+				<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="#"> Posts Admin</a></li>
 			</ol>
 		</nav>
 
@@ -68,8 +70,8 @@
 						<td>'.$key['data'].'</td>
 						<td>'.$key['titulo'].'</td>
 						<td>'.$key['descricao'].'</td>
-						<td><a class="btn btn-success"href="edita.php?id_post='.$key['id_post'].'">Editar</a>
-						<a class="btn btn-danger"href="deleta.php?id_post='.$key['id_post'].'">Deletar</a></td>';
+						<td><a class="btn btn-success"href="editar.php?id_post='.$key['id_post'].'">Editar</a>
+						<a class="btn btn-danger"href="deletar.php?id_post='.$key['id_post'].'">Deletar</a></td>';
 						echo $html;
 					}
 					?>
@@ -91,7 +93,7 @@
 			</a>
 			<div class="alinha" class="text-center">
 				<a class="btn btn-light" href="../logout.php" role="button">Logout</a>
-				<a class="btn btn-light" href="cria.php" role="button">Novo post</a>
+				<a class="btn btn-light" href="criar.php" role="button">Novo post</a>
 			</div>
 		</nav>
 		
@@ -99,7 +101,8 @@
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="../logout.php"> Home</a></li>
-				<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="index_user.php"> Usuario</a></li>
+				<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="index_user.php"> Administrador</a></li>
+				<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="#"> Posts Admin</a></li>
 			</ol>
 		</nav>
 
@@ -114,8 +117,8 @@
 						<th scope="col">Operações</th>
 					</tr>
 				</thead>
+				<br>
 				<tbody>
-					<br>
 				</tbody>
 			</table>
 		</tbody>

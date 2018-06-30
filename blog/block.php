@@ -3,7 +3,8 @@
 	require_once('conexao.php');
 	if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 1){
 		$id=$_GET['id'];
-		$r=Block($id);
+		$ip=$_GET['ip'];
+		$r=Block($id,$ip);
 		header("Location:index.php");
 	}
 

@@ -1,31 +1,27 @@
 <?php
+session_start();
 require_once ('conexao.php');
 if(!isset($_SESSION['id'])&&empty($_SESSION['id'])){
 	if(isset($_POST['email'])&&!empty($_POST['email'])&&isset($_POST['nome'])&&!empty($_POST['nome'])&&isset($_POST['senha'])&&!empty($_POST['senha'])){
 			$nome = $_POST['nome'];
 			$email = $_POST['email'];
 			$senha = $_POST['senha'];
-			$query = ("INSERT INTO usuarios(email,senha,nome) VALUES('$email','$senha','$nome')");
-			$res = pg_query($consulta , $query);
-			$query = ("SELECT * FROM usuarios WHERE email='$email'");
-			$res=pg_query($consulta,$query);
-			if(pg_num_rows($res)>0){
+			$dataNasc = $_POST['dtnasc'];
+			$ip = $_POST['ip'];
+			echo $ip;
+			$tipo=0;
+			$r=cadastro($email,$senha,$nome,$tipo,$dataNasc,$ip);
+			if($r=="sucesso"){
 				header("location:index.php");
+			}else{
+				if($r=="existe"){
+					header("location:index.php?$conf=1");
+				}
 			}
+			
 
 	}
 ?>
-		<form action="cadastro.php" method="POST">
-			Digite seu e-mail:<br>
-			<input type="email" name="email">
-			Digite sua senha:<br>
-			<input type="password" name="senha">
-			Digite seu nome:<br>
-			<input type="nome" name="nome">
-			Digite sua data de nascimento:<br>
-			<input type="dataNasc" name="dataNasc">
-			<input type="submit" value="Cadastrar">
-		</form>
 	<?php
 }
 
