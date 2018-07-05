@@ -45,7 +45,14 @@
 					Postagem<br><br>
 					<textarea name="post" class="form-control" rows="10" cols="40" maxlength="500"></textarea>
 					<hr>
-					<input type="text" name="marcador" class="form-control" placeholder="Marcador">
+					Categoria:
+					<select name="marcador">
+						<option value="1">Futebol</option>
+						<option value="2">Entertenimento</option>
+						<option value="3">a</option>
+						<option value="4">b</option>
+						<option value="5">v</option>
+					</select>
 					<hr>
 					<button type="submit" class="btn btn-secondary btn-lg btn-block">Postar</button>
 				</form>
