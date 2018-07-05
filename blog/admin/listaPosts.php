@@ -27,7 +27,7 @@ if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 1){
 
 			<nav class="navbar sticky-top" style="background-color: #696D7D;">
 				<a class="navbar-brand" href="#">
-					<img src="../brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
+					<img src="../img/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
 				</a>
 				<div class="alinha" class="text-center">
 					<a class="btn btn-light" href="../logout.php" role="button">Logout</a>
@@ -71,7 +71,7 @@ if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 1){
 								<td>'.$key['data'].'</td>
 								<td>'.$key['titulo'].'</td>
 								<td>'.$key['descricao'].'</td>
-								<td><a class="btn btn-danger"href="deletar.php?id_post='.$key['id_post'].'&&id_user='.$key['id_user'].'">
+								<td><a class="btn btn-danger"href="deletar_p_user.php?id_post='.$key['id_post'].'&&id_user='.$key['id_user'].'">
 								Excluir</a>';
 								echo $html;
 							}

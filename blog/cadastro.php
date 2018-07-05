@@ -8,14 +8,24 @@ if(!isset($_SESSION['id'])&&empty($_SESSION['id'])){
 			$senha = $_POST['senha'];
 			$dataNasc = $_POST['dtnasc'];
 			$ip = $_POST['ip'];
-			echo $ip;
 			$tipo=0;
 			$r=cadastro($email,$senha,$nome,$tipo,$dataNasc,$ip);
 			if($r=="sucesso"){
 				header("location:index.php");
 			}else{
 				if($r=="existe"){
-					header("location:index.php?$conf=1");
+					// header("location:index.php?$conf=1");
+					?>
+						<script type="text/javascript">
+							
+							alert("Email invalido");
+							history.go(-1);
+							
+						</script>
+
+
+
+					<?php
 				}
 			}
 			

@@ -18,7 +18,7 @@
 
 		<nav class="navbar sticky-top" style="background-color: #696D7D;">
 			<a class="navbar-brand" href="#">
-				<img src="brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
+				<img src="img/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
 			</a>
 			<div class="alinha" class="text-center">
 				<a class="btn btn-light" href="logout.php" role="button">Logout</a>
@@ -34,7 +34,7 @@
 		</nav>
 
 		<center>
-			<img src="Blocked.png" width="300" height="300">
+			<img src="img/Blocked.png" width="300" height="300">
 			<h2>Você esta temporiariamente bloqueado</h2>
 </center>
 </div>

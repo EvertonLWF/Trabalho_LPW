@@ -4,6 +4,7 @@
 		require_once("cabecalho.php");
 		?>
 	</div>
+	
 </body>
 </hmtl>
 

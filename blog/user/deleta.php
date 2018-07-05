@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	require_once('../conexao.php');
 	if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 0){
 	$id_post=$_GET['id_post'];

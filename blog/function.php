@@ -1,7 +1,7 @@
 <?php 
 function criaPost($id_user,$titulo,$desc,$data,$mark){
 	$consulta=pg_connect("host=localhost port=5432 dbname=blog user=postgres password=feijo62378");
-	$sql="INSERT INTO posts(id_user,titulo,descricao,data,categoria) VALUES ('".$id_user."','".$titulo."','".$desc."','".$data."','".$mark."')";
+	$sql="INSERT INTO posts(id_user,titulo,descricao,data,id_categoria) VALUES ('".$id_user."','".$titulo."','".$desc."','".$data."','".$mark."')";
 	$resultado=pg_query($consulta,$sql);
 	$r=pg_affected_rows($resultado);
 	return $r;
@@ -19,7 +19,7 @@ function listaPosts($id){
 }
 function listaPostsTitulo($titulo){
 	$consulta=pg_connect("host=localhost port=5432 dbname=blog user=postgres password=feijo62378");
-	$sql="SELECT nome,posts.id_user,titulo,descricao,data,id_post FROM posts,usuarios WHERE titulo='".$titulo."'AND posts.id_user=usuarios.id_user";
+	$sql="SELECT nome,posts.id_user,titulo,descricao,data,id_post FROM posts,usuarios WHERE descricao LIKE '%".$titulo."%'AND posts.id_user=usuarios.id_user";
 	$resultado = pg_query($consulta,$sql);
 	if(pg_fetch_assoc($resultado)>0){
 		$r=pg_fetch_all($resultado);
@@ -88,7 +88,7 @@ function editaPost($id,$titulo,$desc,$data,$mark){
 	$resultado = pg_query($consulta,$sql);
 	$sql="UPDATE posts SET data ='".$data."' WHERE id_post='".$id."'";
 	$resultado = pg_query($consulta,$sql);
-	$sql="UPDATE posts SET categoria ='".$mark."' WHERE id_post='".$id."'";
+	$sql="UPDATE posts SET id_categoria ='".$mark."' WHERE id_post='".$id."'";
 	$resultado = pg_query($consulta,$sql);
 	
 	if(pg_fetch_assoc($resultado)>0){
