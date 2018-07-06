@@ -184,7 +184,7 @@
   <?php } ?>
   <br>
   <div class="topo">
-    <form action="admin/busca.php" method="POST">
+    <form action="busca.php" method="POST">
       <div id="divBusca">
         <input type="text" id="txtBusca" name="tx" placeholder="Buscar..."/>
         <input  height="30px" type="image" src="img/botao.png" alt="Buscar..." id="btn2Busca"/>
@@ -199,11 +199,11 @@
 
           <div class="icones" >
 
-            <a href ="#"> <img src="img/mComidaSF.png" title="Gastronomia"/></a>
-            <a href ="#"> <img src="img/mEntretenimentoSF.png" title="Entretenimento"/></a>
-            <a href ="#"> <img src="img/mFutebolSF.png" title="Esportes"/></a>
-            <a href ="#"> <img src="img/mModaSF.png" title="Moda/Beleza"/></a>
-            <a href ="#"> <img src="img/mTecnologiaSF.png" title="Tecnologia"/></a>
+            <a href ="consultaT.php?var=1"> <img src="img/mComidaSF.png" title="Gastronomia"/></a>
+            <a href ="consultaT.php?var=2"> <img src="img/mEntretenimentoSF.png" title="Entretenimento"/></a>
+            <a href ="consultaT.php?var=3"> <img src="img/mFutebolSF.png" title="Esportes"/></a>
+            <a href ="consultaT.php?var=4"> <img src="img/mModaSF.png" title="Moda/Beleza"/></a>
+            <a href ="consultaT.php?var=5"> <img src="img/mTecnologiaSF.png" title="Tecnologia"/></a>
           </div>
           <div class="carrossel">
 
@@ -233,6 +233,3 @@
 </nav>
 </head>
 </html>
-
-
-
