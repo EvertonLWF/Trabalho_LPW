@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,11 +5,11 @@
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../style.css">
-	<title>Novo Post</title>
+	<title>Meu Painel</title>
 </head>
 
 <body>
-	<div class="fundo">
+	<div class="bg">
 
 		<div class="d-flex">
 		</div>
@@ -26,43 +24,39 @@
 		$id= $_SESSION['id'];
 		$r=listaPosts($id);
 		if($r!=null){
-
 			?>
 
-
-			<nav class="navbar sticky-top" style="background-color: #696D7D;">
-				<a class="navbar-brand" href="#">
-					<img src="../img/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
-					<?php  echo "Seja bem vindo ".$nome;?>
+			<nav class="navbar sticky-top" style="background-color: #8fc0a9;">
+				<a class="navbar-brand text-light">
+					<img src="../brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
+					Meu Painel
 				</a>
-				<div class="alinha" class="text-center">
+				<div class="justify-content-end">
 					<a class="btn btn-light" href="../logout.php" role="button">Logout</a>
-					<a class="btn btn-light" href="cria.php" role="button">Novo post</a>
 				</div>
 			</nav>
 
-			<hr>
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="index_user.php"> Home</a></li>
-					<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="#"> Usuario</a></li>
+					<li class="breadcrumb-item"><a class="btn btn-link text-dark" value href="../logout.php">Home</a></li>
+					<li class="breadcrumb-item active"><a class="btn btn-link text-black"  value href="#">Meu Painel</a></li>
 				</ol>
 			</nav>
-			<center>
-				<form action="busca.php" method="POST">
-					<div id="divBusca">
-						<input type="text" id="txtBusca" name="tx" placeholder="Buscar..."/>
-						<input  height="30px" type="image" src="../img/botao.png" alt="Buscar..." id="btn2Busca"/>
-					</div>
+			<nav class="navbar">
+				<a class="btn btn-secondary" href="cria.php" role="button">Nova Postagem</a>
+				<form class="form-inline justify-content-end" action="busca.php" method="POST">
+					<input class="form-control mr-sm-2" type="search" name="txt" id="busca" placeholder="Pesquisa" aria-label="Search">
+					<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Pesquisar</button>
 				</form>
+			</nav>
+			<center>
 				<br>
 				<table class="table">
-					<h3 align="center">Meus Posts </h3>
 					<thead>
 						<tr>
-							<th scope="col">Data</th>
 							<th scope="col">Titulo</th>
 							<th scope="col">Descrição</th>
+							<th scope="col">Data</th>
 							<th scope="col">Operações</th>
 						</tr>
 					</thead>
@@ -70,11 +64,12 @@
 						<?php
 						foreach ($r as $key) {
 							$html= '<br><tr>
-							<td>'.date("d-m-Y H:i",strtotime($key['data'])).'</td>
+							
 							<td>'.$key['titulo'].'</td>
 							<td>'.$key['descricao'].'</td>
-							<td><a class="btn btn-success"href="edita.php?id_post='.$key['id_post'].'">Editar</a>
-							<a class="btn btn-danger"href="deleta.php?id_post='.$key['id_post'].'">Deletar</a></td>';
+							<td>'.date("d-m-Y H:i",strtotime($key['data'])).'</td>
+							<td><a class="btn btn-secondary"href="edita.php?id_post='.$key['id_post'].'">Editar</a>
+							<a class="btn btn-dark"href="deleta.php?id_post='.$key['id_post'].'">Deletar</a></td>';
 							echo $html;
 						}
 						?>
@@ -89,41 +84,40 @@
 </body>
 </html>
 <?php }else{ ?>
-
-<nav class="navbar sticky-top" style="background-color: #696D7D;">
-	<a class="navbar-brand" href="#">
-		<img src="../img/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
-		<?php  echo "Seja bem vindo ".$nome;?>
+<nav class="navbar sticky-top" style="background-color: #8fc0a9;">
+	<a class="navbar-brand text-light">
+		<img src="../brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
+		Meu Painel
 	</a>
-	<div class="alinha" class="text-center">
+	<div class="justify-content-end">
 		<a class="btn btn-light" href="../logout.php" role="button">Logout</a>
-		<a class="btn btn-light" href="cria.php" role="button">Novo post</a>
 	</div>
 </nav>
 
-<hr>
 <nav aria-label="breadcrumb">
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="../logout.php"> Home</a></li>
-		<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="index_user.php"> Usuario</a></li>
+		<li class="breadcrumb-item"><a class="btn btn-link text-dark" value href="../logout.php">Home</a></li>
+		<li class="breadcrumb-item active"><a class="btn btn-link text-black"  value href="#">Meu Painel</a></li>
 	</ol>
 </nav>
-<center>
-	<form action="busca.php" method="POST">
-		<div id="divBusca">
-			<input type="text" id="txtBusca" name="tx" placeholder="Buscar..."/>
-			<input  height="30px" type="image" src="../img/botao.png" alt="Buscar..." id="btn2Busca"/>
-		</div>
+
+<nav class="navbar">
+	<a class="btn btn-secondary" href="cria.php" role="button">Nova Postagem</a>
+	<form class="form-inline justify-content-end" action="busca.php" method="POST">
+		<input class="form-control mr-sm-2" type="search" name="txt" id="busca" placeholder="Pesquisa" aria-label="Search">
+		<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Pesquisar</button>
 	</form>
+</nav>
+
+<center>
 	<br>
 
 	<table class="table">
-		<h3 align="center">Meus Posts </h3>
 		<thead>
 			<tr>
-				<th scope="col">Data</th>
-				<th scope="col">Titulo</th>
+				<th scope="col">Título</th>
 				<th scope="col">Descrição</th>
+				<th scope="col">Data</th>
 				<th scope="col">Operações</th>
 			</tr>
 		</thead>
