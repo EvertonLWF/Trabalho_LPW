@@ -8,31 +8,28 @@
 	<title>Novo Post</title>
 </head>
 <body>
-	<div class="fundo">
+	<div class="bg">
 
 		<div class="d-flex">
   		</div>
-
-  		
-
-			<nav class="navbar sticky-top" style="background-color: #696D7D;">
-				<a class="navbar-brand" href="#">
-					<img src="../brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
-				</a>
-			<div class="alinha" class="text-center">
+			<nav class="navbar sticky-top" style="background-color: #8fc0a9;">
+			<a class="navbar-brand text-light">
+				<img src="../brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
+				Nova Postagem
+			</a>
+			<div class="justify-content-end">
 				<a class="btn btn-light" href="../logout.php" role="button">Logout</a>
 				<a class="btn btn-light" href="index_user.php" role="button">Painel</a>
 			</div>
-			</nav>
-		
-			<hr>
-			<nav aria-label="breadcrumb">
-				  <ol class="breadcrumb">
-				    <li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="../logout.php"> Home</a></li>
-					<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="index_user.php"> Usuario</a></li>
-					<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="#"> Novo Post</a></li>
-				  </ol>
-			</nav>
+		</nav>
+
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a class="btn btn-link text-dark" value href="../logout.php">Home</a></li>
+				<li class="breadcrumb-item"><a class="btn btn-link text-dark" value href="index_user.php">Meu Painel</a></li>
+				<li class="breadcrumb-item"><a class="btn btn-link" value href="#">Nova Postagem</a></li>
+			</ol>
+		</nav>
 
 		<center>
 			
@@ -44,16 +41,17 @@
 					Postagem<br><br>
 					<textarea name="post" class="form-control" rows="10" cols="40" maxlength="500"></textarea>
 					<hr>
-					<select name="marcador">
-						<option value="1">Comida</option>
-						<option value="2">Entertenimento</option>
-						<option value="3">Futelol</option>
+					<select class="custom-select" name="marcador">
+						<option selected>Escolha uma categoria</option>
+						<option value="1">Esportes</option>
+						<option value="2">Entretenimento</option>
+						<option value="3">Moda/Beleza</option>
 						<option value="4">Gastronomia</option>
 						<option value="5">Tecnologia</option>
 					</select>
-					<!-- <input type="text" name="marcador" class="form-control" placeholder="Marcador"> -->
 					<hr>
 					<button type="submit" class="btn btn-secondary btn-lg btn-block">Postar</button>
+					<a class="btn btn-dark btn-lg btn-block" href="index_user.php" role="button">Cancelar</a>
 				</form>
 			</div>
 		</center>
