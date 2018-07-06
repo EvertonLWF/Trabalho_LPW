@@ -34,8 +34,8 @@
 
 		<nav class="navbar sticky-top" style="background-color: #696D7D;">
 			<a class="navbar-brand" href="#">
-				<img src="../brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
-				<?php  echo "Seja bem vindo ".$nome;?>
+				<img src="../img/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
+				<?php  echo "Seja bem vindo Administrador";?>
 			</a>
 			<div class="alinha" class="text-center">
 				<a class="btn btn-light" href="../logout.php" role="button">Logout</a>
@@ -51,7 +51,16 @@
 				<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="#"> Posts Admin</a></li>
 			</ol>
 		</nav>
-
+		<br>
+		<center>
+			<form action="busca.php" method="POST">
+					<div id="divBusca">
+						<input type="text" id="txtBusca" name="tx" placeholder="Buscar..."/>
+						<input  height="30px" type="image" src="../img/botao.png" alt="Buscar..." id="btn1Busca"/>
+					</div>
+				</form>
+			<br>
+		</center>
 		<center>
 			<table class="table">
 				<h3 align="center">Meus Posts </h3>
@@ -67,7 +76,7 @@
 					<?php
 					foreach ($r as $key) {
 						$html= '<br><tr>
-						<td>'.$key['data'].'</td>
+						<td>'.date("d-m-Y H:i",strtotime($key['data'])).'</td>
 						<td>'.$key['titulo'].'</td>
 						<td>'.$key['descricao'].'</td>
 						<td><a class="btn btn-success"href="editar.php?id_post='.$key['id_post'].'">Editar</a>

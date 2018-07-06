@@ -17,6 +17,7 @@
 		</div>
 
 		<?php
+		session_start();
 		require_once("../conexao.php");
 		$id_post=$_GET['id_post'];
 		$r=exibePost($id_post);	
@@ -55,7 +56,13 @@
 					Postagem<br><br>
 					<textarea name="post" class="form-control" rows="10" cols="40" maxlength="500" ><?php echo $key['descricao']?></textarea>
 					<hr>
-					<input type="text" name="marcador" class="form-control" placeholder="Marcador"value="<?php echo $key['categoria']?>">
+					<select name="marcador">
+						<option value="1">Comida</option>
+						<option value="2">Entertenimento</option>
+						<option value="3">Futelol</option>
+						<option value="4">Gastronomia</option>
+						<option value="5">Tecnologia</option>
+					</select>
 					<hr>
 					<button type="submit" class="btn btn-secondary btn-lg btn-block">Postar</button>
 					<?php } ?>

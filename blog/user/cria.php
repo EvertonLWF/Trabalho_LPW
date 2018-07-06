@@ -45,11 +45,11 @@
 					<textarea name="post" class="form-control" rows="10" cols="40" maxlength="500"></textarea>
 					<hr>
 					<select name="marcador">
-						<option value="1">Futebol</option>
+						<option value="1">Comida</option>
 						<option value="2">Entertenimento</option>
-						<option value="3">a</option>
-						<option value="4">b</option>
-						<option value="5">v</option>
+						<option value="3">Futelol</option>
+						<option value="4">Gastronomia</option>
+						<option value="5">Tecnologia</option>
 					</select>
 					<!-- <input type="text" name="marcador" class="form-control" placeholder="Marcador"> -->
 					<hr>

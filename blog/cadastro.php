@@ -14,7 +14,6 @@ if(!isset($_SESSION['id'])&&empty($_SESSION['id'])){
 				header("location:index.php");
 			}else{
 				if($r=="existe"){
-					// header("location:index.php?$conf=1");
 					?>
 						<script type="text/javascript">
 							

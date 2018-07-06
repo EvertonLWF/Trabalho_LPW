@@ -3,7 +3,7 @@ session_start();
 if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 1){
 
 	$nome=$_SESSION['nome'];
-	echo "Seja bem vindo ".$nome;
+	
 	require_once('../conexao.php');
 	include_once'../function.php';
 	?>
@@ -28,10 +28,11 @@ if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == 1){
 			<nav class="navbar sticky-top" style="background-color: #696D7D;">
 				<a class="navbar-brand" href="#">
 					<img src="../img/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
+					<?php echo "Seja bem vindo Administrador"; ?>
 				</a>
 				<div class="alinha" class="text-center">
 					<a class="btn btn-light" href="../logout.php" role="button">Logout</a>
-					<a class="btn btn-light" href="index_user.php" role="button">Meus Posts</a>
+					<a class="btn btn-light" href="postsAdmin.php" role="button">Painel</a>
 				</div>
 			</nav>
 

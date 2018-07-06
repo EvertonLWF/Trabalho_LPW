@@ -26,58 +26,63 @@
 		$id= $_SESSION['id'];
 		$r=listaPosts($id);
 		if($r!=null){
-			
-		
-		?>
+
+			?>
 
 
-		<nav class="navbar sticky-top" style="background-color: #696D7D;">
-			<a class="navbar-brand" href="#">
-				<img src="../img/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
-				<?php  echo "Seja bem vindo ".$nome;?>
-			</a>
-			<div class="alinha" class="text-center">
-				<a class="btn btn-light" href="../logout.php" role="button">Logout</a>
-				<a class="btn btn-light" href="cria.php" role="button">Novo post</a>
-			</div>
-		</nav>
-		
-		<hr>
-		<nav aria-label="breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="../logout.php"> Home</a></li>
-				<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="index_user.php"> Usuario</a></li>
-			</ol>
-		</nav>
+			<nav class="navbar sticky-top" style="background-color: #696D7D;">
+				<a class="navbar-brand" href="#">
+					<img src="../img/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
+					<?php  echo "Seja bem vindo ".$nome;?>
+				</a>
+				<div class="alinha" class="text-center">
+					<a class="btn btn-light" href="../logout.php" role="button">Logout</a>
+					<a class="btn btn-light" href="cria.php" role="button">Novo post</a>
+				</div>
+			</nav>
 
-		<center>
-			<table class="table">
-				<h3 align="center">Meus Posts </h3>
-				<thead>
-					<tr>
-						<th scope="col">Data</th>
-						<th scope="col">Titulo</th>
-						<th scope="col">Descrição</th>
-						<th scope="col">Operações</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-					foreach ($r as $key) {
-						$html= '<br><tr>
-						<td>'.$key['data'].'</td>
-						<td>'.$key['titulo'].'</td>
-						<td>'.$key['descricao'].'</td>
-						<td><a class="btn btn-success"href="edita.php?id_post='.$key['id_post'].'">Editar</a>
-						<a class="btn btn-danger"href="deleta.php?id_post='.$key['id_post'].'">Deletar</a></td>';
-						echo $html;
-					}
-					?>
-				</tbody>
-			</table>
-		</tbody>
-	</table>
-</center>
+			<hr>
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="index_user.php"> Home</a></li>
+					<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="#"> Usuario</a></li>
+				</ol>
+			</nav>
+			<center>
+				<form action="busca.php" method="POST">
+					<div id="divBusca">
+						<input type="text" id="txtBusca" name="tx" placeholder="Buscar..."/>
+						<input  height="30px" type="image" src="../img/botao.png" alt="Buscar..." id="btn2Busca"/>
+					</div>
+				</form>
+				<br>
+				<table class="table">
+					<h3 align="center">Meus Posts </h3>
+					<thead>
+						<tr>
+							<th scope="col">Data</th>
+							<th scope="col">Titulo</th>
+							<th scope="col">Descrição</th>
+							<th scope="col">Operações</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						foreach ($r as $key) {
+							$html= '<br><tr>
+							<td>'.date("d-m-Y H:i",strtotime($key['data'])).'</td>
+							<td>'.$key['titulo'].'</td>
+							<td>'.$key['descricao'].'</td>
+							<td><a class="btn btn-success"href="edita.php?id_post='.$key['id_post'].'">Editar</a>
+							<a class="btn btn-danger"href="deleta.php?id_post='.$key['id_post'].'">Deletar</a></td>';
+							echo $html;
+						}
+						?>
+					</tbody>
+				</table>
+			</tbody>
+		</table>
+	</center>
 </div>
 
 
@@ -86,40 +91,48 @@
 <?php }else{ ?>
 
 <nav class="navbar sticky-top" style="background-color: #696D7D;">
-			<a class="navbar-brand" href="#">
-				<img src="../img/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
-			</a>
-			<div class="alinha" class="text-center">
-				<a class="btn btn-light" href="../logout.php" role="button">Logout</a>
-				<a class="btn btn-light" href="cria.php" role="button">Novo post</a>
-			</div>
-		</nav>
-		
-		<hr>
-		<nav aria-label="breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="../logout.php"> Home</a></li>
-				<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="index_user.php"> Usuario</a></li>
-			</ol>
-		</nav>
+	<a class="navbar-brand" href="#">
+		<img src="../img/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
+		<?php  echo "Seja bem vindo ".$nome;?>
+	</a>
+	<div class="alinha" class="text-center">
+		<a class="btn btn-light" href="../logout.php" role="button">Logout</a>
+		<a class="btn btn-light" href="cria.php" role="button">Novo post</a>
+	</div>
+</nav>
 
-		<center>
-			<table class="table">
-				<h3 align="center">Meus Posts </h3>
-				<thead>
-					<tr>
-						<th scope="col">Data</th>
-						<th scope="col">Titulo</th>
-						<th scope="col">Descrição</th>
-						<th scope="col">Operações</th>
-					</tr>
-				</thead>
-				<tbody>
-					<br>
-				</tbody>
-			</table>
+<hr>
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="../logout.php"> Home</a></li>
+		<li class="breadcrumb-item active" href= aria-current="page"><a class="btn btn-link"  value href="index_user.php"> Usuario</a></li>
+	</ol>
+</nav>
+<center>
+	<form action="busca.php" method="POST">
+		<div id="divBusca">
+			<input type="text" id="txtBusca" name="tx" placeholder="Buscar..."/>
+			<input  height="30px" type="image" src="../img/botao.png" alt="Buscar..." id="btn2Busca"/>
+		</div>
+	</form>
+	<br>
+
+	<table class="table">
+		<h3 align="center">Meus Posts </h3>
+		<thead>
+			<tr>
+				<th scope="col">Data</th>
+				<th scope="col">Titulo</th>
+				<th scope="col">Descrição</th>
+				<th scope="col">Operações</th>
+			</tr>
+		</thead>
+		<tbody>
+			<br>
 		</tbody>
 	</table>
+</tbody>
+</table>
 </center>
 </div>
 

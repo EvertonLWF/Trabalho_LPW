@@ -89,8 +89,6 @@
         </div>
 
         <div class="alinha" class="text-center">
-          <!--<a href="novo.php" class="btn btn-light" role="button">Cadastrar</a> -->
-
           <button type="button" class="btn btn-light" data-toggle="modal" data-target="#cadastro">
             Cadastre-se
           </button>
@@ -163,7 +161,7 @@
   <?php } ?>
   <br>
   <div class="topo">
-    <form action="admin/busca.php" method="POST">
+    <form action="busca.php" method="POST">
       <div id="divBusca">
         <input type="text" id="txtBusca" name="tx" placeholder="Buscar..."/>
         <input  height="30px" type="image" src="img/botao.png" alt="Buscar..." id="btn2Busca"/>
@@ -178,11 +176,11 @@
           <hr color=#c8d5b9>
           <div class="icones" >
 
-            <a href ="#"> <img src="img/mComidaSF.png" title="comida"/></a>
-            <a href ="#"> <img src="img/mEntretenimentoSF.png" title="comida"/></a>
-            <a href ="#"> <img src="img/mFutebolSF.png" title="comida"/></a>
-            <a href ="#"> <img src="img/mModaSF.png" title="comida"/></a>
-            <a href ="#"> <img src="img/mTecnologiaSF.png" title="comida"/></a>
+                <a href ="consultaT.php?var=1"> <img src="img/mComidaSF.png" title="comida"/></a>
+                <a href ="consultaT.php?var=2"> <img src="img/mEntretenimentoSF.png" title="Entretenimento"/></a>
+                <a href ="consultaT.php?var=3"> <img src="img/mFutebolSF.png" title="Futebol"/></a>
+                <a href ="consultaT.php?var=4"> <img src="img/mModaSF.png" title="Moda"/></a>
+                <a href ="consultaT.php?var=5"> <img src="img/mTecnologiaSF.png" title="Tecnologia"/></a>
           </div>
           <hr color=#c8d5b9>
           <div class="carrossel">
