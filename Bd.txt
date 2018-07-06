@@ -13,21 +13,20 @@ create table posts(
 );
 
 create table usuario(
-	id_user int not null,
-	email varchar(255),
-	senha varchar(255),
-	nome varchar(255),
-	tipo int,
-	primary key(id_user)
+    	id_user integer NOT NULL ,
+	email character varying(255) NOT NULL,
+	senha character varying(255)  NOT NULL,
+    	nome character varying(255)  NOT NULL,
+    	tipo integer,
+    	datanasc date,
+    	ip_user character(40),
+  	CONSTRAINT usuarios_pkey PRIMARY KEY (id_user)
 
 
 );
 
 create table categoria (
 	nm_categoria varchar(255) not null,
-	primary key (id_categoria)
+	primary key (id_categoria),
+	CONSTRAINT categoria_pkey PRIMARY KEY (id_categoria)
 );
-
-teste
-
-outro teste
