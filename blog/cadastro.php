@@ -17,7 +17,7 @@ if(!isset($_SESSION['id'])&&empty($_SESSION['id'])){
 					?>
 						<script type="text/javascript">
 							
-							alert("Email invalido");
+							alert("Email Ja existe !!!!!");
 							history.go(-1);
 							
 						</script>
